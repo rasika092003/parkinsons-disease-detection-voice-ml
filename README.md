@@ -1,12 +1,8 @@
-# Parkinson Disease Classification with Random Forest
+# Parkinson’s Disease Detection Using Voice Data
 
 ## Overview
 
-This project aims to classify Parkinson's disease using a dataset containing various features related to patient health. The model employs the Random Forest algorithm, a popular ensemble method known for its accuracy and robustness in classification tasks.
-
-## Dataset
-
-The dataset used for this project is obtained from Kaggle. It contains features extracted from voice recordings of patients with Parkinson's disease. You can access the dataset [here]((https://www.kaggle.com/datasets/shreyadutta1116/parkinsons-disease/)).
+This project focuses on detecting Parkinson’s Disease using voice-based biomedical features and machine learning techniques. Multiple classification models were trained and evaluated to identify the most accurate and interpretable model. The final model was deployed using a Flask web application for real-time predictions.
 
 ### Dataset Features
 - `name`: Identifier for each record (not used in training)
@@ -19,6 +15,22 @@ The dataset used for this project is obtained from Kaggle. It contains features 
 - `numpy`: For numerical operations.
 - `scikit-learn`: For machine learning algorithms and evaluation metrics.
 
+## Technologies Used
+
+Python
+Pandas, NumPy
+Scikit-learn
+Jupyter Notebook
+Flask
+HTML (for web interface)
+
+##Methodology
+Data preprocessing and feature scaling
+Trained and evaluated 6 machine learning models
+Compared models using Accuracy, Precision, Recall, and F1-score
+Selected Random Forest as the best-performing model
+Saved the trained model and deployed it using Flask
+
 ## Model Implementation
 
 1. **Data Loading**: The dataset is loaded using `pandas`.
@@ -29,53 +41,17 @@ The dataset used for this project is obtained from Kaggle. It contains features 
 4. **Data Normalization**: The features are standardized using `StandardScaler` to improve model performance.
 5. **Random Forest Classifier**: The Random Forest model is trained on the scaled training data, and predictions are made on the testing data.
 
-## Results
-
-The model achieved impressive performance on the test set, with the following metrics:
-
-- **Random Forest Accuracy**: 0.9916
-
-### Confusion Matrix
-
-```
-[[211  2]
- [  0 26]]
-```
-
-### Classification Report
-
-| Class | Precision | Recall | F1-Score | Support |
-|-------|-----------|--------|----------|---------|
-| 0     | 1.00      | 0.99   | 1.00     | 213     |
-| 1     | 0.93      | 1.00   | 0.96     | 26      |
-
-- **Accuracy**: 0.99
-- **Macro Average**: 
-  - Precision: 0.96
-  - Recall: 1.00
-  - F1-Score: 0.98
-- **Weighted Average**: 
-  - Precision: 0.99
-  - Recall: 0.99
-  - F1-Score: 0.99
+## Result
+Random Forest Accuracy: ~89%
+Demonstrated strong performance across precision and recall metrics
+Enabled real-time prediction through a web interface
 
 ## Conclusion
 
-The Random Forest model successfully classified Parkinson's disease with high accuracy. The results indicate that the model is particularly effective in identifying patients without the disease (Class 0) while still performing well in identifying those with the disease (Class 1).
-
-## Future Work
-
-- Explore other classification algorithms and compare their performances.
-- Implement hyperparameter tuning to optimize the Random Forest model further.
-- Investigate feature importance to identify which health metrics are most indicative of Parkinson's disease.
+The Flask-based web app allows users to input voice parameters and receive Parkinson’s Disease predictions instantly.
 
 
-## How to Run the Code
 
-1. Clone this repository:
-   ```bash
-   git clone https://github.com/SudeErzurumlu/parkinsons-detection.git
-   
-## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+
